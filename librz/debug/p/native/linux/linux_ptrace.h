@@ -24,8 +24,7 @@
 #endif
 #endif
 
-#if !defined(PTRACE_EVENT_FORK) && !defined(PTRACE_EVENT_VFORK) && !defined(PTRACE_EVENT_CLONE) \
-	&& !defined(PTRACE_EVENT_EXEC) && !defined(PTRACE_EVENT_VFORK_DONE) && !defined(PTRACE_EVENT_EXIT)
+#if !defined(PTRACE_EVENT_FORK) && !defined(PTRACE_EVENT_VFORK) && !defined(PTRACE_EVENT_CLONE) && !defined(PTRACE_EVENT_EXEC) && !defined(PTRACE_EVENT_VFORK_DONE) && !defined(PTRACE_EVENT_EXIT)
 
 #define PTRACE_EVENT_FORK 1
 #define PTRACE_EVENT_VFORK 2
@@ -36,8 +35,7 @@
 
 #endif
 
-#if !defined(PTRACE_O_TRACEFORK) && !defined(PTRACE_O_TRACEVFORK) && !defined(PTRACE_O_TRACECLONE) \
-	&& !defined(PTRACE_O_TRACEEXEC) && !defined(PTRACE_O_TRACEVFORKDONE) && !defined(PTRACE_O_TRACEEXIT)
+#if !defined(PTRACE_O_TRACEFORK) && !defined(PTRACE_O_TRACEVFORK) && !defined(PTRACE_O_TRACECLONE) && !defined(PTRACE_O_TRACEEXEC) && !defined(PTRACE_O_TRACEVFORKDONE) && !defined(PTRACE_O_TRACEEXIT)
 
 #define PTRACE_O_TRACESYSGOOD 1
 #define PTRACE_O_TRACEFORK (1 << 1)

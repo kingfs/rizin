@@ -6,7 +6,8 @@
 
 #ifndef HAVE_EPRINTF
 #include <stdio.h>
-#define eprintf(...) { fprintf(stderr,##__VA_ARGS__); }
+#define eprintf(...) \
+	{ fprintf(stderr, ##__VA_ARGS__); }
 #define HAVE_EPRINTF 1
 #endif
 
@@ -14,10 +15,10 @@
 #define KD_IO_NET 1
 
 enum {
-    E_OK = 0,
-    E_TIMEOUT = -1,
-    E_ERROR = -2,
-    E_NOIF = -3,
+	E_OK = 0,
+	E_TIMEOUT = -1,
+	E_ERROR = -2,
+	E_NOIF = -3,
 };
 
 typedef struct io_backend_t {

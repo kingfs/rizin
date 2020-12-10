@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-RZ_LIB_VERSION_HEADER (rz_hash);
+RZ_LIB_VERSION_HEADER(rz_hash);
 
 #if HAVE_LIB_SSL
 #include <openssl/sha.h>
@@ -54,7 +54,6 @@ typedef struct _SHA512_CTX {
 } RZ_SHA512_CTX;
 typedef RZ_SHA512_CTX RZ_SHA384_CTX;
 #endif
-
 
 /*
  * Since we have not enough space in bitmask, you may do fine
@@ -282,7 +281,7 @@ typedef struct rz_hash_seed_t {
 #define RZ_HASH_SIZE_FLETCHER32 4
 #define RZ_HASH_SIZE_FLETCHER64 8
 
-#define RZ_HASH_NBITS (8*sizeof(ut64))
+#define RZ_HASH_NBITS (8 * sizeof(ut64))
 
 enum HASH_INDICES {
 	RZ_HASH_IDX_MD5 = 0,
@@ -479,7 +478,7 @@ enum HASH_INDICES {
 #define RZ_HASH_CRC64_ISO (1ULL << RZ_HASH_IDX_CRC64_ISO)
 #endif /* #if RZ_HAVE_CRC64 */
 
-#define RZ_HASH_ALL ((1ULL << RZ_MIN(63, RZ_HASH_NUM_INDICES))-1)
+#define RZ_HASH_ALL ((1ULL << RZ_MIN(63, RZ_HASH_NUM_INDICES)) - 1)
 
 #ifdef RZ_API
 /* OO */
@@ -514,10 +513,10 @@ RZ_API ut16 rz_hash_xorpair(const ut8 *a, ut64 len);
 RZ_API int rz_hash_parity(const ut8 *buf, ut64 len);
 RZ_API ut8 rz_hash_mod255(const ut8 *b, ut64 len);
 RZ_API ut64 rz_hash_luhn(const ut8 *buf, ut64 len);
-RZ_API utcrc rz_hash_crc_preset (const ut8 *data, ut32 size, enum CRC_PRESETS preset);
+RZ_API utcrc rz_hash_crc_preset(const ut8 *data, ut32 size, enum CRC_PRESETS preset);
 
 /* analysis */
-RZ_API ut8  rz_hash_hamdist(const ut8 *buf, int len);
+RZ_API ut8 rz_hash_hamdist(const ut8 *buf, int len);
 RZ_API double rz_hash_entropy(const ut8 *data, ut64 len);
 RZ_API double rz_hash_entropy_fraction(const ut8 *data, ut64 len);
 RZ_API int rz_hash_pcprint(const ut8 *buffer, ut64 len);

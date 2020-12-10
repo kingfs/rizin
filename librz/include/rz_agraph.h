@@ -27,11 +27,10 @@ typedef struct rz_ascii_node_t {
 } RzANode;
 
 typedef struct rz_core_graph_hits_t {
-	char *old_word ;
+	char *old_word;
 	RzVector word_list;
 	int word_nth;
 } RzAGraphHits;
-
 
 #define RZ_AGRAPH_MODE_NORMAL 0
 #define RZ_AGRAPH_MODE_OFFSET 1
@@ -110,7 +109,7 @@ RZ_API Sdb *rz_agraph_get_sdb(RzAGraph *g);
 RZ_API void rz_agraph_foreach(RzAGraph *g, RzANodeCallback cb, void *user);
 RZ_API void rz_agraph_foreach_edge(RzAGraph *g, RAEdgeCallback cb, void *user);
 RZ_API void rz_agraph_set_curnode(RzAGraph *g, RzANode *node);
-RZ_API RzAGraph *create_agraph_from_graph(const RzGraph/*<RzGraphNodeInfo>*/ *graph);
+RZ_API RzAGraph *create_agraph_from_graph(const RzGraph /*<RzGraphNodeInfo>*/ *graph);
 #endif
 
 #endif

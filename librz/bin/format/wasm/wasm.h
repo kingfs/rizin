@@ -12,7 +12,7 @@
 // https://github.com/WebAssembly/design/blob/master/BinaryEncoding.md
 
 #define RZ_BIN_WASM_MAGIC_BYTES "\x00" \
-			       "asm"
+				"asm"
 #define RZ_BIN_WASM_VERSION 0x1
 #define RZ_BIN_WASM_STRING_LENGTH 256
 #define RZ_BIN_WASM_END_OF_CODE 0xb
@@ -182,7 +182,6 @@ typedef struct rz_bin_wasm_data_t {
 
 // TODO: custom sections
 
-
 typedef struct rz_bin_wasm_custom_name_function_names_t {
 	ut32 count;
 	RzIDStorage *names;
@@ -207,7 +206,7 @@ typedef struct rz_bin_wasm_custom_name_entry_t {
 
 	ut8 payload_data;
 	union {
-		struct rz_bin_wasm_name_t* mod_name;
+		struct rz_bin_wasm_name_t *mod_name;
 		RzBinWasmCustomNameFunctionNames *func;
 		RzBinWasmCustomNameLocalNames *local;
 	};
@@ -238,21 +237,21 @@ typedef struct rz_bin_wasm_obj_t {
 
 } RzBinWasmObj;
 
-RzBinWasmObj *rz_bin_wasm_init (RzBinFile *bf, RzBuffer *buf);
-void rz_bin_wasm_destroy (RzBinFile *bf);
-RzList *rz_bin_wasm_get_sections (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_types (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_imports (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_exports (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_tables (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_memories (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_globals (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_elements (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_codes (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_datas (RzBinWasmObj *bin);
-RzList *rz_bin_wasm_get_custom_names (RzBinWasmObj *bin);
-ut32 rz_bin_wasm_get_entrypoint (RzBinWasmObj *bin);
-const char *rz_bin_wasm_get_function_name (RzBinWasmObj *bin, ut32 idx);
-const char *rz_bin_wasm_valuetype_to_string (rz_bin_wasm_value_type_t type);
+RzBinWasmObj *rz_bin_wasm_init(RzBinFile *bf, RzBuffer *buf);
+void rz_bin_wasm_destroy(RzBinFile *bf);
+RzList *rz_bin_wasm_get_sections(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_types(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_imports(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_exports(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_tables(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_memories(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_globals(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_elements(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_codes(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_datas(RzBinWasmObj *bin);
+RzList *rz_bin_wasm_get_custom_names(RzBinWasmObj *bin);
+ut32 rz_bin_wasm_get_entrypoint(RzBinWasmObj *bin);
+const char *rz_bin_wasm_get_function_name(RzBinWasmObj *bin, ut32 idx);
+const char *rz_bin_wasm_valuetype_to_string(rz_bin_wasm_value_type_t type);
 
 #endif

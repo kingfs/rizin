@@ -10,11 +10,11 @@
 typedef struct {
 	HANDLE hnd;
 } RzIOW32;
-typedef  struct _PPA {
+typedef struct _PPA {
 	LARGE_INTEGER address;
 	DWORD len;
 	unsigned char buffer;
-} PA, * PPA;
+} PA, *PPA;
 
 typedef struct _RTL_PROCESS_MODULE_INFORMATION {
 	HANDLE Section;
@@ -26,7 +26,7 @@ typedef struct _RTL_PROCESS_MODULE_INFORMATION {
 	USHORT InitOrderIndex;
 	USHORT LoadCount;
 	USHORT OffsetToFileName;
-	UCHAR  FullPathName[256];
+	UCHAR FullPathName[256];
 } RTL_PROCESS_MODULE_INFORMATION, *PRTL_PROCESS_MODULE_INFORMATION;
 
 typedef struct _RTL_PROCESS_MODULES {
@@ -55,8 +55,8 @@ extern HANDLE gHandleDriver;
 
 BOOL StartStopService(LPCTSTR lpServiceName, BOOL bStop);
 int GetSystemModules(RzIO *io);
-int ReadKernelMemory (ut64 address, ut8 *buf, int len);
-int WriteKernelMemory (ut64 address, const ut8 *buf, int len);
-int Init (const char * driverPath);
+int ReadKernelMemory(ut64 address, ut8 *buf, int len);
+int WriteKernelMemory(ut64 address, const ut8 *buf, int len);
+int Init(const char *driverPath);
 
 #endif

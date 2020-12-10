@@ -9,8 +9,8 @@
 #define NIBBLES_BY_SUBKEY 32
 
 struct serpent_state {
-    ut32 key[8];
-    int key_size;
+	ut32 key[8];
+	int key_size;
 };
 
 /*
@@ -35,6 +35,6 @@ void serpent_decrypt(struct serpent_state *st, ut32 in[DW_BY_BLOCK], ut32 out[DW
  *          all the subkeys needed for the encryptio/dcryption with serpent.
  */
 void serpent_keyschedule(struct serpent_state st,
-        ut32 subkeys[NB_SUBKEYS * DW_BY_BLOCK]);
+	ut32 subkeys[NB_SUBKEYS * DW_BY_BLOCK]);
 
 #endif

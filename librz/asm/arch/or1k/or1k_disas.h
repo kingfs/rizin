@@ -169,7 +169,7 @@ static inline int is_type_descriptor_defined(insn_type_t type) {
 }
 
 static inline insn_type_t type_of_opcode(insn_t *descr, insn_extra_t *extra_descr) {
-	rz_return_val_if_fail (descr, INSN_END);
+	rz_return_val_if_fail(descr, INSN_END);
 
 	if (extra_descr == NULL) {
 		return descr->type;
